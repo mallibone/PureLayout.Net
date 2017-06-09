@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureLayout.Binding", "PureLayout.Binding\PureLayout.Binding.csproj", "{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
