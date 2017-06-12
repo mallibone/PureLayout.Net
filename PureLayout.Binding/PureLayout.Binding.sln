@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureLayout.Binding", "PureLayout.Binding\PureLayout.Binding.csproj", "{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureLayout.Net", "PureLayout.Binding\PureLayout.Net.csproj", "{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

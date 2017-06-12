@@ -6,8 +6,8 @@
     <ProjectGuid>{0C82BFBF-0E04-4D90-9568-FF8C240CC4DC}</ProjectGuid>
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>PureLayout.Binding</RootNamespace>
-    <AssemblyName>PureLayout.Binding</AssemblyName>
+    <RootNamespace>PureLayout.Net</RootNamespace>
+    <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -41,9 +41,9 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\Build\libPureLayout.a">
-      <Kind>Static</Kind>
-      <ForceLoad>True</ForceLoad>
+    <NativeReference Include="..\..\PureLayout.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />

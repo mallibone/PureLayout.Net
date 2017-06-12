@@ -1,0 +1,3 @@
+[submodule "PureLayout"]
+	path = PureLayout
+	url = https://github.com/PureLayout/PureLayout.git
