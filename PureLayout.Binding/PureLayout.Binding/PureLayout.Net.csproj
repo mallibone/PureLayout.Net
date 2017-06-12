@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +10,20 @@
     <RootNamespace>PureLayout.Net</RootNamespace>
     <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <PackageId>PureLayout.Net</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>Mark Allibone (@mallibone)</Authors>
+    <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Mark Allibone</Owners>
+    <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
+    <PackageReleaseNotes>Wraps PureLayout 3.0.2</PackageReleaseNotes>
+    <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
+    <PackageTags>PureLayout Xamarin.iOS</PackageTags>
+    <Title>PureLayout.Net</Title>
+    <Description>The ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
+
+Fully compatible with iOS 9.</Description>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,5 +61,9 @@
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.targets')" />
 </Project>
