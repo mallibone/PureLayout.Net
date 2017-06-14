@@ -23,7 +23,7 @@ The library is compiled for use with the simulator and iOS devices with an ARMv7
   
  ## PureLayout.Net 101
  
- Coming soon
+ Sample Project Coming soon
  
  While PureLayout can play allong very nicely with existing Storyboard layouts and can be used for simply adding or editing layout definitions it allows you to define your UI in a modularized, sharable and scalable fashion. To create a Xamarin.iOS project without using a storyboard follow the instructions on this page of the <a href="https://developer.xamarin.com/guides/ios/application_fundamentals/ios_code_only/" target="_blank">Xamarin Developer guide</a>.
  
