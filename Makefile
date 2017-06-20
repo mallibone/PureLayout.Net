@@ -32,6 +32,7 @@ $(PROJECTNAME).framework: $(PROJECTNAME)-simulator.framework $(PROJECTNAME)-ipho
 
 clean:
 	rm -rf $(PROJECT_ROOT)/build
+	rm -rf $(PROJECT_ROOT)/sharpie-build
 	rm -rf *.framework
 	rm $(BINDING_PROJECT)/Generated_ApiDefinitions.cs
 	rm $(BINDING_PROJECT)/Generated_StructsAndEnums.cs
