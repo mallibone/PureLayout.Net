@@ -37,8 +37,11 @@ namespace PureLayoutSample
             var scrollView = new UIScrollView();
             var tableView = new UITableView();
             var clearHistoryButton = new UIButton(UIButtonType.RoundedRect);
+			clearHistoryButton.SetTitle("Clear History", UIControlState.Normal);
+            clearHistoryButton.BackgroundColor = UIColor.FromRGB(243, 105, 105);
+            clearHistoryButton.SetTitleColor(UIColor.White, UIControlState.Normal);
 
-            View.Add(_amount);
+			View.Add(_amount);
             View.Add(_tipPercentage);
             View.Add(_calculateButton);
 			View.Add(tableView);
@@ -59,7 +62,8 @@ namespace PureLayoutSample
             tableView.AutoPinEdgeToSuperviewEdge(ALEdge.Trailing, Constants.DefaultMargin);
             tableView.AutoPinEdge(ALEdge.Bottom, ALEdge.Top, clearHistoryButton);
 
-            clearHistoryButton.AutoPinEdgesToSuperview(Constants.DefaultMargin);
+            clearHistoryButton.AutoPinEdgesToSuperviewMarginsExcludingEdge(ALEdge.Top);
+			clearHistoryButton.AutoPinEdge(ALEdge.Top,ALEdge.Bottom, tableView);
 		}
     }
 

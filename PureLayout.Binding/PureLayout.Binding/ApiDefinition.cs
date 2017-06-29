@@ -61,9 +61,9 @@ namespace PureLayout.Net
 		[Export("autoPinEdgesToSuperviewEdgesWithInsets:")]
 		NSLayoutConstraint[] AutoPinEdgesToSuperviewEdges(UIEdgeInsets insets);
 
-		// -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewEdgesWithInsets:(UIEdgeInsets)insets excludingEdge:(ALEdge)edge;
+		// -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewEdgesWithInsets:(UIEdgeInsets)insets:excludingEdge:(ALEdge)edge;
 		[Export("autoPinEdgesToSuperviewEdgesWithInsets:excludingEdge:")]
-		NSLayoutConstraint[] AutoPinEdgesToSuperviewEdges(UIEdgeInsets insets, ALEdge excludingEdge);
+		NSLayoutConstraint[] AutoPinEdgesToSuperviewEdgesExcludingEdge(UIEdgeInsets insets, ALEdge excludingEdge);
 
 		// -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewMargin:(ALEdge)edge;
 		[Export("autoPinEdgeToSuperviewMargin:")]
@@ -81,6 +81,10 @@ namespace PureLayout.Net
 		// -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewMarginsExcludingEdge:(ALEdge)edge;
 		[Export("autoPinEdgesToSuperviewMarginsExcludingEdge:")]
 		NSLayoutConstraint[] AutoPinEdgesToSuperviewMarginsExcludingEdge(ALEdge edge);
+
+		// -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewMarginsExcludingEdge:(UIEdgeInsets)insets:(ALEdge)edge;
+		[Export("autoPinEdgesToSuperviewMarginsWithInsets:excludingEdge:")]
+		NSLayoutConstraint[] AutoPinEdgesToSuperviewMarginsExcludingEdge(UIEdgeInsets insets, ALEdge edge);
 
 		// -(NSLayoutConstraint * _Nonnull)autoPinEdge:(ALEdge)edge toEdge:(ALEdge)toEdge ofView:(UIView * _Nonnull)otherView;
 		[Export("autoPinEdge:toEdge:ofView:")]

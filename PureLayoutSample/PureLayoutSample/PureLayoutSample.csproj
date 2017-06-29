@@ -95,13 +95,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="PureLayout.Net, Version=1.0.6379.38719, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PureLayout.Net.0.2.0\lib\xamarinios10\PureLayout.Net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="PureLayout.Net">
+      <HintPath>..\packages\PureLayout.Net.0.3.0\lib\xamarinios10\PureLayout.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
