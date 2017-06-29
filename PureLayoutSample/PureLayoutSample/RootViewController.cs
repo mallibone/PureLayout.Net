@@ -12,7 +12,6 @@ namespace PureLayoutSample
     class RootViewController : UIViewController
     {
         private UITextField _amount;
-        private UIStackView _stackView;
         private UITextField _tipPercentage;
         private UIButton _calculateButton;
 
@@ -62,7 +61,8 @@ namespace PureLayoutSample
             tableView.AutoPinEdgeToSuperviewEdge(ALEdge.Trailing, Constants.DefaultMargin);
             tableView.AutoPinEdge(ALEdge.Bottom, ALEdge.Top, clearHistoryButton);
 
-            clearHistoryButton.AutoPinEdgesToSuperviewMarginsExcludingEdge(ALEdge.Top);
+            clearHistoryButton.AutoPinEdgesToSuperviewEdgesExcludingEdge(ALEdge.Top);
+			clearHistoryButton.AutoSetDimension(ALDimension.Height, Constants.WideMargin * 2);
 			clearHistoryButton.AutoPinEdge(ALEdge.Top,ALEdge.Bottom, tableView);
 		}
     }

@@ -100,7 +100,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="PureLayout.Net">
-      <HintPath>..\packages\PureLayout.Net.0.3.0\lib\xamarinios10\PureLayout.Net.dll</HintPath>
+      <HintPath>..\packages\PureLayout.Net.0.4.0\lib\xamarinios10\PureLayout.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
