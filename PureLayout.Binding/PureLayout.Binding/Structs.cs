@@ -3,6 +3,11 @@ using UIKit;
 
 namespace PureLayout.Net
 {
+    public static class ALHelpers
+    {
+        public static UIEdgeInsets ALEdgeInsetsZero = new UIEdgeInsets(0,0,0,0);
+    }
+
     [Native]
     public enum ALEdge : long
     {

@@ -41,8 +41,10 @@ namespace PureLayoutSample
             View.Add(_amount);
             View.Add(_tipPercentage);
             View.Add(_calculateButton);
+			View.Add(tableView);
+            View.Add(clearHistoryButton);
 
-            _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
+			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
             _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
             _amount.AutoPinEdge(ALEdge.Trailing, ALEdge.Leading, _tipPercentage, -Constants.DefaultMargin);
 
@@ -51,7 +53,14 @@ namespace PureLayoutSample
 
             _calculateButton.AutoPinEdge(ALEdge.Top, ALEdge.Bottom, _amount, Constants.DefaultMargin);
             _calculateButton.AutoAlignAxisToSuperviewAxis(ALAxis.Vertical);
-        }
+
+            tableView.AutoPinEdge(ALEdge.Top, ALEdge.Bottom, _calculateButton, Constants.WideMargin);
+            tableView.AutoPinEdgeToSuperviewEdge(ALEdge.Leading, Constants.DefaultMargin);
+            tableView.AutoPinEdgeToSuperviewEdge(ALEdge.Trailing, Constants.DefaultMargin);
+            tableView.AutoPinEdge(ALEdge.Bottom, ALEdge.Top, clearHistoryButton);
+
+            clearHistoryButton.AutoPinEdgesToSuperview(Constants.DefaultMargin);
+		}
     }
 
     public static class Constants
