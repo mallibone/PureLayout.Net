@@ -13,7 +13,7 @@ Writing your responsive iOS UIs in code behind can be a challenge when only usin
  
  ## Setup
  
-To start out using PureLayou.Net in your Xamarin.iOS project simply install the following NuGet package:
+To start out using PureLayout.Net in your Xamarin.iOS project simply install the following NuGet package:
 
 ```powershell
 Install-Package PureLayout.Net
@@ -24,15 +24,20 @@ The library is compiled for use with the simulator and iOS devices with an ARMv7
  ## PureLayout.Net 101
  
  Sample Project Coming soon
+ PureLayout allows you to define your iOS UI in directly in C#/F#. This will not only make the UI code easier to maintain and use, but also allows to swiftly define layouting constraints. For example the following UI:
  
- While PureLayout can play allong very nicely with existing Storyboard layouts and can be used for simply adding or editing layout definitions it allows you to define your UI in a modularized, sharable and scalable fashion. To create a Xamarin.iOS project without using a storyboard follow the instructions on this page of the <a href="https://developer.xamarin.com/guides/ios/application_fundamentals/ios_code_only/" target="_blank">Xamarin Developer guide</a>.
+ Was developed with the following constraints:
+ 
+ 
+ 
+ While PureLayout can play along very nicely with existing Storyboard layouts and can be used for simply adding or editing layout definitions it allows you to define your UI in a modularized, shareable and scaleable fashion. To create a Xamarin.iOS project without using a storyboard follow the instructions on this page of the <a href="https://developer.xamarin.com/guides/ios/application_fundamentals/ios_code_only/" target="_blank">Xamarin Developer guide</a>.
  
  
  ## API Reference
  
  Coming soon
 
-## Building it from scratch
+## Building PureLayout.Net from scratch
 
 Coming soon
 
