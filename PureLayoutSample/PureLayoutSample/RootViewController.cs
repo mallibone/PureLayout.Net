@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Foundation;
 using GalaSoft.MvvmLight.Helpers;
 using PureLayout.Net;
@@ -18,15 +16,7 @@ namespace PureLayoutSample
         private UIButton _clearHistoryButton;
         private List<Binding> _bindings = new List<Binding>();
 
-        public RootViewController()
-        {
-        }
-        public RootViewController(IntPtr handler):base(handler)
-        {
-        }
-
         public TipCalculatorViewModel ViewModel => ViewModelLocator.Instance.TipCalculatorViewModel;
-
 
         #region Overrides of UIViewController
 
@@ -98,8 +88,8 @@ namespace PureLayoutSample
 
         private void CreateBindings()
         {
-            _bindings.Add(View.SetBinding(() => ViewModel.CurrentPrice, () => _amount.Text, BindingMode.TwoWay));
-            _bindings.Add(View.SetBinding(() => ViewModel.CurrentTipPercentage, () => _tipPercentage.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.CurrentPrice, () => _amount.Text, BindingMode.TwoWay));
+            _bindings.Add(this.SetBinding(() => ViewModel.CurrentTipPercentage, () => _tipPercentage.Text, BindingMode.TwoWay));
             _tableView.Source = ViewModel.TipHistory.GetTableViewSource(CreateTipCell, BindCellDelegate);
             _calculateButton.SetCommand(ViewModel.CalculateTipCommand);
             _clearHistoryButton.SetCommand(ViewModel.ClearTipHistoryCommand);
