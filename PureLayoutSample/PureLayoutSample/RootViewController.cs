@@ -9,6 +9,8 @@ namespace PureLayoutSample
 {
     class RootViewController : UIViewController
     {
+        private UILabel _amountLabel;
+        private UILabel _tipPercentageLabel;
         private UITextField _amount;
         private UITextField _tipPercentage;
         private UIButton _calculateButton;
@@ -39,6 +41,10 @@ namespace PureLayoutSample
         private void LayoutView()
         {
             View.BackgroundColor = UIColor.White;
+            _amountLabel = new UILabel();
+            _amountLabel.Text = "Amount: ";
+            _amountLabel.Font = UIFont.PreferredBody;
+
             _amount = new UITextField
             {
                 KeyboardType = UIKeyboardType.DecimalPad,
@@ -52,6 +58,7 @@ namespace PureLayoutSample
                 Text = "10.0",
                 BorderStyle = UITextBorderStyle.RoundedRect
             };
+
             _calculateButton = new UIButton(UIButtonType.RoundedRect);
             _calculateButton.SetTitle("Calculate Tip", UIControlState.Normal);
             _tableView = new UITableView();
