@@ -27,7 +27,10 @@ namespace PureLayoutSample
             base.ViewWillAppear(animated);
             LayoutView();
             CreateBindings();
-        }
+
+			var g = new UITapGestureRecognizer(() => View.EndEditing(true));
+			View.AddGestureRecognizer(g);
+		}
 
         public override void ViewDidDisappear(bool animated)
         {
@@ -45,6 +48,10 @@ namespace PureLayoutSample
             _amountLabel.Text = "Amount: ";
             _amountLabel.Font = UIFont.PreferredBody;
 
+            _tipPercentageLabel = new UILabel();
+            _tipPercentageLabel.Text = "Tip %: ";
+            _tipPercentageLabel.Font = UIFont.PreferredBody;
+
             _amount = new UITextField
             {
                 KeyboardType = UIKeyboardType.DecimalPad,
@@ -55,7 +62,7 @@ namespace PureLayoutSample
             _tipPercentage = new UITextField
             {
                 KeyboardType = UIKeyboardType.DecimalPad,
-                Text = "10.0",
+				Placeholder = "Tip %",
                 BorderStyle = UITextBorderStyle.RoundedRect
             };
 
@@ -67,18 +74,30 @@ namespace PureLayoutSample
             _clearHistoryButton.BackgroundColor = UIColor.FromRGB(243, 105, 105);
             _clearHistoryButton.SetTitleColor(UIColor.White, UIControlState.Normal);
 
+            //View.Add(_amountLabel);
+            //View.Add(_tipPercentageLabel);
             View.Add(_amount);
             View.Add(_tipPercentage);
             View.Add(_calculateButton);
             View.Add(_tableView);
             View.Add(_clearHistoryButton);
 
-            _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
-            _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
-            _amount.AutoPinEdge(ALEdge.Trailing, ALEdge.Leading, _tipPercentage, -Constants.DefaultMargin);
+			//_amountLabel.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
+			//_amountLabel.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
 
-            _tipPercentage.AutoPinEdgeToSuperviewEdge(ALEdge.Right, Constants.DefaultMargin);
-            _tipPercentage.AutoAlignAxis(ALAxis.Horizontal, _amount);
+			//_amount.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _amountLabel, Constants.TightMargin);
+			//_amount.AutoAlignAxis(ALAxis.Baseline, _amountLabel);
+			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
+			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
+            //_amount.AutoPinEdge(ALEdge.Trailing, ALEdge.Leading, _tipPercentageLabel, -Constants.DefaultMargin);
+
+
+            //_tipPercentageLabel.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _amount, -Constants.DefaultMargin);
+			//_tipPercentageLabel.AutoAlignAxis(ALAxis.Baseline, _amountLabel);
+			//_tipPercentage.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _tipPercentageLabel, Constants.TightMargin);
+            _tipPercentage.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _amount, Constants.DefaultMargin);
+			_tipPercentage.AutoPinEdgeToSuperviewEdge(ALEdge.Right, Constants.DefaultMargin);
+            _tipPercentage.AutoAlignAxis(ALAxis.Baseline, _amount);
 
             _calculateButton.AutoPinEdge(ALEdge.Top, ALEdge.Bottom, _amount, Constants.DefaultMargin);
             _calculateButton.AutoAlignAxisToSuperviewAxis(ALAxis.Vertical);
