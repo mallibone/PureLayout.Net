@@ -33,9 +33,10 @@ namespace PureLayoutSample.ViewModels
             var currentValue = Convert.ToDecimal(CurrentPrice);
             var currentTipPercentage = Convert.ToDecimal(CurrentTipPercentage);
 
-            var currentTip = currentValue * (currentTipPercentage / 100M);
+            var currentTip = Math.Round(currentValue * (currentTipPercentage / 100M), 2, MidpointRounding.ToEven);
 
-            TipHistory.Add(currentTip.ToString("F2"));
+            var currentTipString = $"{currentValue} * {currentTipPercentage}% = {currentTip}";
+            TipHistory.Insert(0, currentTipString);
         }
     }
 }
