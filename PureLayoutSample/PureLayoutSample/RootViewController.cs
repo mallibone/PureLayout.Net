@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿﻿using System.Collections.Generic;
 using Foundation;
 using GalaSoft.MvvmLight.Helpers;
 using PureLayout.Net;
