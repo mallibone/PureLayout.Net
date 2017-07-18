@@ -1,4 +1,4 @@
-![NuGet Version](https://img.shields.io/nuget/v/PureLayout.Net.svg) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![NuGet Version](https://img.shields.io/nuget/v/PureLayout.Net.svg)](https://www.nuget.org/packages/PureLayout.Net/) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 # PureLayout.Net
 
 The ultimate layouting API for iOS is now available for Xamarin.iOS. <a href="https://github.com/PureLayout/PureLayout" target="_blank">PureLayout</a> extends `UIView`/`NSView`, `NSArray`, and `NSLayoutConstraint` and brings productivity boosting enhancements with a refined Auto Layout API that is modeled after Apple's own frameworks. PureLayout.Net brings you 100% of the cross-platform Objective-C library to C# with Xamarin.iOS.
