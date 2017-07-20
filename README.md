@@ -24,12 +24,23 @@ The library is compiled for use with the simulator and iOS devices with an ARMv7
   
  ## PureLayout.Net 101
  
- Sample Project Coming soon
- PureLayout allows you to define your iOS UI in directly in C#/F#. This will not only make the UI code easier to maintain and use, but also allows to swiftly define layouting constraints. For example the following UI:
+ PureLayout allows you to define your iOS UI in directly in C#/F#. This will not only make the UI code easier to maintain and use, but also allows to swiftly define layouting constraints. After installing the NuGet package, you can add the following using line to the class you want to start layouting your UI:
+ 
+ ```csharp
+somethingThatDerivesFromUIView.AutoPinEdgesToSuperview();
+```
+ 
+All the PureLayout constraints start with `Auto[XYZ]`. Keep that in mind when you are looking for a constraint to apply. Defining a constraint is as easy as the following line:
+ 
+ ```csharp
+somethingThatDerivesFromUIView.AutoPinEdgesToSuperview();
+```
+
+So for the follwing UI:
  
  ![showing the rendered sample code bellow](https://github.com/mallibone/PureLayout.Net/blob/master/PureLayoutSample/Images/ScreenShot.png "Sample Layout")
  
- Was developed with the following constraints:
+ The layouts would look like this:
  
 ```csharp
 private void LayoutView()
@@ -96,8 +107,25 @@ private void LayoutView()
  
  
  ## API Reference
- 
- Coming soon
+
+PureLayout.Net allows to set the following different kind of constraints via the following attributes:
+
+* `ALEdge`
+* `ALDimension`
+* `ALAxis`
+* `ALMargin`
+* `ALMarginAxis`
+
+As stated on the original PureLayout GitHub repository, the following <a href="https://github.com/PureLayout/PureLayout/blob/master/Images/PureLayout-CommonAttributes.png" target="_blank">picture</a> describes best what kind of constraints can be set on `UIView` Elements.
+
+### Pin Edges
+Coming soon
+
+### Align
+Coming soon
+
+### Set Dimensions
+Coming soon
 
 ## Building PureLayout.Net from scratch
 
