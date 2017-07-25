@@ -119,7 +119,24 @@ PureLayout.Net allows to set the following different kind of constraints via the
 As stated on the original PureLayout GitHub repository, the following <a href="https://github.com/PureLayout/PureLayout/blob/master/Images/PureLayout-CommonAttributes.png" target="_blank">picture</a> describes best what kind of constraints can be set on `UIView` Elements.
 
 ### Pin Edges
-Coming soon
+PureLayout lets you pin the edges of a view to it's super view or any adjacent view. Pinning the view to it's super view can be achieved with the following methods:
+
+CODE TO COME, PIN TO SUPER VIEW
+
+Note that it is possible to either pin all edges or all but one edge to the super view. It is further possible to define the inset with the `UIEdgeInset` object. Alternatively the edges can be pinned to the margins of the super view.
+
+CODE TO COME, EDGES MARGIN
+
+It is also possible to pin a single edge to the super view:
+
+CODE TO COME, EDGE TO SUPER VIEW
+
+Further you can pin an edge of one UIView to the edge of another UIView:
+
+CODE TO COME, PIN EDGE FROM ONE UIVIEW TO ANOTHER
+
+This allows to align views within a super view.
+
 
 ### Align
 Coming soon
