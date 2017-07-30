@@ -11,7 +11,7 @@
     <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>PureLayout.Net</PackageId>
-    <PackageVersion>0.4.0</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>Mark Allibone (@mallibone)</Authors>
     <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Mark Allibone</Owners>
@@ -20,7 +20,9 @@
     <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
     <PackageTags>PureLayout Xamarin.iOS</PackageTags>
     <Title>PureLayout.Net</Title>
-    <Description>The ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
+    <Description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
+
+Based on PureLayout: 3.0.2
 
 Fully compatible with iOS 9 and above.
 
