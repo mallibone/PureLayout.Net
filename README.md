@@ -108,35 +108,97 @@ private void LayoutView()
  
  ## API Reference
 
-PureLayout.Net allows to set the following different kind of constraints via the following attributes:
+PureLayout.Net allows to set the following different kind of constraints via the following attributes that are mapped to Enums in Xamarin:
 
 * `ALEdge`
+    * `Top`
+    * `Bottom`
+    * `Left`
+    * `Right`
+    * `Leading`
+    * `Trailing`
 * `ALDimension`
+    * `Height`
+    * `Width`
 * `ALAxis`
+    * `Vertical`
+    * `Horizontal`
+    * `Baseline`
+    * `FirstBaseline`
+    * `LastBaseline`
 * `ALMargin`
+    * `Top`
+    * `Bottom`
+    * `Left`
+    * `Right`
+    * `Leading`
+    * `Trailing`
 * `ALMarginAxis`
+    * `Horizontal`
+    * `Vertical`
 
 As stated on the original PureLayout GitHub repository, the following <a href="https://github.com/PureLayout/PureLayout/blob/master/Images/PureLayout-CommonAttributes.png" target="_blank">picture</a> describes best what kind of constraints can be set on `UIView` Elements.
 
 ### Pin Edges
 PureLayout lets you pin the edges of a view to it's super view or any adjacent view. Pinning the view to it's super view can be achieved with the following methods:
 
-CODE TO COME, PIN TO SUPER VIEW
+```csharp
+// Prep code
+var edgeInsets = new UIEdgeInsets(top: 16, left: 16f, bottom: 16f, right: 16f);
+var view = new UIView();
 
+// Pin Edges
+view.AutoPinEdgesToSuperviewEdges();
+view.AutoPinEdgesToSuperviewEdges(edgeInsets);
+
+// Exclude an Edge
+view.AutoPinEdgesToSuperviewEdgesExcludingEdge(excludingEdge: ALEdge.Bottom);
+view.AutoPinEdgesToSuperviewEdgesExcludingEdge(insets: edgeInsets, excludingEdge: ALEdge.Bottom);
+```
 Note that it is possible to either pin all edges or all but one edge to the super view. It is further possible to define the inset with the `UIEdgeInset` object. Alternatively the edges can be pinned to the margins of the super view.
 
-CODE TO COME, EDGES MARGIN
+```csharp
+view.AutoPinEdgesToSuperviewMargins();
+
+// Exclude an Edge
+view.AutoPinEdgesToSuperviewMarginsExcludingEdge(edge: ALEdge.Bottom);
+view.AutoPinEdgesToSuperviewMarginsExcludingEdge(insets: edgeInsets, edge: ALEdge.Bottom);
+```
 
 It is also possible to pin a single edge to the super view:
 
-CODE TO COME, EDGE TO SUPER VIEW
+```csharp
+// Pin Edge to Superview Edge
+view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top);
+view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top, inset: 16f);
+view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top, inset: 16f, relation: NSLayoutRelation.LessThanOrEqual);
+
+// Pin Edge to Supverview Margin
+view.AutoPinEdgeToSuperviewMargin(edge: ALEdge.Left);
+view.AutoPinEdgeToSuperviewMargin(edge: ALEdge.Left, relation: NSLayoutRelation.GreaterThanOrEqual);
+```
 
 Further you can pin an edge of one UIView to the edge of another UIView:
 
-CODE TO COME, PIN EDGE FROM ONE UIVIEW TO ANOTHER
+```csharp
+view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView);
+view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView, offset: 16f);
+view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView, offset: 16f, relation: NSLayoutRelation.GreaterThanOrEqual);
+```
 
-This allows to align views within a super view.
+And if you just simply want to pin a `UIView` to the top or bottom navigation layout just use one of the following options:
 
+```csharp
+// Pin to Top Layout
+view.AutoPinToTopLayoutGuideOfViewController(viewController: this);
+view.AutoPinToTopLayoutGuideOfViewController(viewController: this, inset: 16f);
+view.AutoPinToTopLayoutGuideOfViewController(viewController: this, inset: 16f, relation: NSLayoutRelation.Equal);
+
+// Pin to Bottom Layout
+view.AutoPinToBottomLayoutGuideOfViewController(viewController: this);
+view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f);
+view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f, relation: NSLayoutRelation.Equal);
+```
 
 ### Align
 Coming soon
