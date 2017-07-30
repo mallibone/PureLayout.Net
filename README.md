@@ -200,8 +200,26 @@ view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f
 view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f, relation: NSLayoutRelation.Equal);
 ```
 
-### Align
-Coming soon
+### Align and Center
+Another common use case when defining a layout is aligning different UI Elements to each other. There by the UI element can either be aligned to the superview:
+
+```csharp
+// Align to Superview
+view.AutoCenterInSuperview();
+view.AutoAlignAxisToSuperviewAxis(axis: ALAxis.Horizontal);
+
+// Align to Supberview margins
+view.AutoCenterInSuperviewMargins();
+view.AutoAlignAxisToSuperviewMarginAxis(axis: ALAxis.Horizontal);
+```
+
+
+Or in regards to another UI element:
+
+```csharp
+view.AutoAlignAxis(axis: ALAxis.Baseline, otherView: otherView);
+```
+
 
 ### Set Dimensions
 Coming soon

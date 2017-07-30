@@ -80,6 +80,38 @@ namespace PureLayoutSample
             View.Add(_tableView);
             View.Add(_clearHistoryButton);
 
+            var edgeInsets = new UIEdgeInsets(top: 16, left: 16f, bottom: 16f, right: 16f);
+            var view = new UIView();
+            var otherView = new UIView();
+
+            view.AutoPinEdgesToSuperviewEdges();
+            view.AutoPinEdgesToSuperviewEdges(insets: edgeInsets);
+            view.AutoPinEdgesToSuperviewEdgesExcludingEdge(excludingEdge: ALEdge.Bottom);
+            view.AutoPinEdgesToSuperviewEdgesExcludingEdge(insets: edgeInsets, excludingEdge: ALEdge.Bottom);
+
+            view.AutoPinEdgesToSuperviewMargins();
+            view.AutoPinEdgesToSuperviewMarginsExcludingEdge(edge: ALEdge.Bottom);
+            view.AutoPinEdgesToSuperviewMarginsExcludingEdge(insets: edgeInsets, edge: ALEdge.Bottom);
+
+            view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top);
+            view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top, inset: 16f);
+            view.AutoPinEdgeToSuperviewEdge(edge: ALEdge.Top, inset: 16f, relation: NSLayoutRelation.LessThanOrEqual);
+
+            view.AutoPinEdgeToSuperviewMargin(edge: ALEdge.Left);
+            view.AutoPinEdgeToSuperviewMargin(edge: ALEdge.Left, relation: NSLayoutRelation.GreaterThanOrEqual);
+
+            view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView);
+            view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView, offset: 16f);
+            view.AutoPinEdge(edge: ALEdge.Right, toEdge: ALEdge.Left, otherView: otherView, offset: 16f, relation: NSLayoutRelation.GreaterThanOrEqual);
+
+            view.AutoPinToTopLayoutGuideOfViewController(viewController: this);
+            view.AutoPinToTopLayoutGuideOfViewController(viewController: this, inset: 16f);
+            view.AutoPinToTopLayoutGuideOfViewController(viewController: this, inset: 16f, relation: NSLayoutRelation.Equal);
+
+            view.AutoPinToBottomLayoutGuideOfViewController(viewController: this);
+            view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f);
+            view.AutoPinToBottomLayoutGuideOfViewController(viewController: this, inset: 16f, relation: NSLayoutRelation.Equal);
+
 			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
 			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
             _tipPercentage.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _amount, Constants.DefaultMargin);
