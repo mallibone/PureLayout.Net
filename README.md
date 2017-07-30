@@ -218,15 +218,52 @@ Or in regards to another UI element:
 
 ```csharp
 view.AutoAlignAxis(axis: ALAxis.Baseline, otherView: otherView);
+view.AutoAlignAxis(axis: ALAxis.Baseline, otherView: otherView, offset: 16f);
+view.AutoAlignAxis(axis: ALAxis.Baseline, otherView: otherView, offset: 16f, multiplier: 2f);
+```
+
+### Set Dimensions
+PureLayout allows to either set the dimension to a fixed value:
+
+```csharp
+view.AutoSetDimension(dimension: ALDimension.Width, size: 128f);
+view.AutoSetDimension(dimension: ALDimension.Width, size: 128f, relation: NSLayoutRelation.LessThanOrEqual);
+
+view.AutoSetDimensionsToSize(size: new CGSize(width: 32, height: 32));
+```
+
+Or ensure it is the same size as the dimension of another view:
+
+```csharp
+// Match Dimension with offset
+view.AutoMatchDimension(dimension: ALDimension.Height, toDimension: ALDimension.Width, otherView: otherView);
+view.AutoMatchDimension(dimension: ALDimension.Height, toDimension: ALDimension.Width, otherView: otherView, offset: 16f);
+view.AutoMatchDimension(dimension: ALDimension.Height, toDimension: ALDimension.Width, otherView: otherView, offset: 16f, relation: NSLayoutRelation.GreaterThanOrEqual);
+
+// Match Dimension with multiplier
+view.AutoMatchDimensionWithMultiplier(dimension: ALDimension.Height, toDimension: ALDimension.Width, otherView: otherView, multiplier: 2f);
+view.AutoMatchDimensionWithMultiplier(dimension: ALDimension.Height, toDimension: ALDimension.Width, otherView: otherView, multiplier: 2f, relation: NSLayoutRelation.GreaterThanOrEqual);
 ```
 
 
-### Set Dimensions
-Coming soon
-
 ## Building PureLayout.Net from scratch
 
-Coming soon
+If you want to build PureLayout.Net from scratch or contribute to the binding library this section should give you enough information to build the project.
+
+When cloning the project ensure that it is recursively checked out:
+
+`git clone --recursive https://github.com/mallibone/PureLayout.Net.git`
+
+To compile the Objective-C PureLayout library, run `make` from the project root folder.
+
+This will compile the native Part of the library. If you now compile the Binding Project, the compiled native assembly will automatically be included.
+
+To test any changes one can use the sample solution. Please note that many errors only occur at run time, so make sure to invoke any methods that you add or change to ensure they will work.
+
+
+### Cleaning up
+
+Once you have compiled the native PureLayout library you can delete all the generated assemblies by running `make clean` from  the root projects root directory.
 
 ## Thank you
 
