@@ -10,5 +10,14 @@ namespace PureLayout.Net
             return view.AutoPinEdgesToSuperviewEdgesExcludingEdge(ALHelpers.ALEdgeInsetsZero, excludingEdge);
         }
 
+        public static NSLayoutConstraint AutoPinToBottomLayoutGuideOfViewController(this UIView view, UIViewController viewController)
+        {
+            return view.AutoPinToBottomLayoutGuideOfViewController(viewController, 0f);
+        }
+
+		public static NSLayoutConstraint AutoPinToTopLayoutGuideOfViewController(this UIView view, UIViewController viewController)
+		{
+			return view.AutoPinToTopLayoutGuideOfViewController(viewController, 0f);
+		}
 	}
 }
