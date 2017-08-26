@@ -28,13 +28,13 @@ The library is compiled for use with the simulator and iOS devices with an ARMv7
  PureLayout allows you to define your iOS UI in directly in C#/F#. This will not only make the UI code easier to maintain and use, but also allows to swiftly define layouting constraints. After installing the NuGet package, you can add the following using line to the class you want to start layouting your UI:
  
  ```csharp
-somethingThatDerivesFromUIView.AutoPinEdgesToSuperview();
+using PureLayout.Net;
 ```
  
 All the PureLayout constraints start with `Auto[XYZ]`. Keep that in mind when you are looking for a constraint to apply. Defining a constraint is as easy as the following line:
  
  ```csharp
-somethingThatDerivesFromUIView.AutoPinEdgesToSuperview();
+somethingThatDerivesFromUIView.AutoPinEdgesToSuperviewEdges();
 ```
 
 So for the follwing UI:
