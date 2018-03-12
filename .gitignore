@@ -29,6 +29,7 @@ tarballs/
 test-results/
 Thumbs.db
 .vs/
+.mfractor/
 
 # Mac bundle stuff
 *.dmg

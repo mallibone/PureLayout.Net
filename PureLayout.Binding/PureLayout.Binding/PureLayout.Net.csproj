@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.props')" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,12 +11,12 @@
     <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>PureLayout.Net</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Mark Allibone (@mallibone)</Authors>
     <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Mark Allibone</Owners>
     <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
-    <PackageReleaseNotes>Wraps PureLayout 3.0.2</PackageReleaseNotes>
+    <PackageReleaseNotes>Includes minor bugfixes from the Purelayout master branch</PackageReleaseNotes>
     <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
     <PackageTags>PureLayout Xamarin.iOS</PackageTags>
     <Title>PureLayout.Net</Title>
@@ -70,5 +70,5 @@ License: MIT</Description>
     <BundleResource Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.315\build\NuGet.Build.Packaging.targets')" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>
