@@ -80,10 +80,25 @@ namespace PureLayoutSample
             View.Add(_tableView);
             View.Add(_clearHistoryButton);
 
-			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
-			_amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
+            if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
+            {
+                _amount.AutoPinEdgeToSuperviewSafeArea(ALEdge.Top, Constants.WideMargin);
+                _amount.AutoPinEdgeToSuperviewSafeArea(ALEdge.Left, Constants.DefaultMargin);
+            }
+            else
+            {
+                _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Top, Constants.WideMargin);
+                _amount.AutoPinEdgeToSuperviewEdge(ALEdge.Left, Constants.DefaultMargin);
+            }
             _tipPercentage.AutoPinEdge(ALEdge.Leading, ALEdge.Trailing, _amount, Constants.DefaultMargin);
-			_tipPercentage.AutoPinEdgeToSuperviewEdge(ALEdge.Right, Constants.DefaultMargin);
+            if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
+            {
+                _tipPercentage.AutoPinEdgeToSuperviewSafeArea(ALEdge.Right, Constants.DefaultMargin);
+            }
+            else
+            {
+                _tipPercentage.AutoPinEdgeToSuperviewEdge(ALEdge.Right, Constants.DefaultMargin);
+            }
             _tipPercentage.AutoAlignAxis(ALAxis.Baseline, _amount);
 
             _calculateButton.AutoPinEdge(ALEdge.Top, ALEdge.Bottom, _amount, Constants.DefaultMargin);

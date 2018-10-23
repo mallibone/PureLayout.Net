@@ -1,6 +1,7 @@
 ﻿using System;
 using CoreGraphics;
 using Foundation;
+using ObjCRuntime;
 using UIKit;
 
 namespace PureLayout.Net
@@ -40,8 +41,45 @@ namespace PureLayout.Net
 		[Export("autoAlignAxisToSuperviewMarginAxis:")]
 		NSLayoutConstraint AutoAlignAxisToSuperviewMarginAxis(ALAxis axis);
 
-		// -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewEdge:(ALEdge)edge;
-		[Export("autoPinEdgeToSuperviewEdge:")]
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewSafeArea:(ALEdge)edge __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgeToSuperviewSafeArea:")]
+        NSLayoutConstraint AutoPinEdgeToSuperviewSafeArea(ALEdge edge);
+
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewSafeArea:(ALEdge)edge withInset:(CGFloat)inset __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgeToSuperviewSafeArea:withInset:")]
+        NSLayoutConstraint AutoPinEdgeToSuperviewSafeArea(ALEdge edge, nfloat inset);
+
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewSafeArea:(ALEdge)edge withInset:(CGFloat)inset relation:(NSLayoutRelation)relation __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgeToSuperviewSafeArea:withInset:relation:")]
+        NSLayoutConstraint AutoPinEdgeToSuperviewSafeArea(ALEdge edge, nfloat inset, NSLayoutRelation relation);
+
+        // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewSafeArea __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgesToSuperviewSafeArea")]
+        //[Verify(MethodToProperty)]
+        NSLayoutConstraint[] AutoPinEdgesToSuperviewSafeArea();
+
+        // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewSafeAreaWithInsets:(UIEdgeInsets)insets __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgesToSuperviewSafeAreaWithInsets:")]
+        NSLayoutConstraint[] AutoPinEdgesToSuperviewSafeAreaWithInsets(UIEdgeInsets insets);
+
+        // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewSafeAreaWithInsets:(UIEdgeInsets)insets excludingEdge:(ALEdge)edge __attribute__((availability(tvos, introduced=9.0))) __attribute__((availability(ios, introduced=9.0)));
+        [Introduced(PlatformName.TvOS, 9, 0)]
+        [Introduced(PlatformName.iOS, 9, 0)]
+        [Export("autoPinEdgesToSuperviewSafeAreaWithInsets:excludingEdge:")]
+        NSLayoutConstraint[] AutoPinEdgesToSuperviewSafeAreaWithInsets(UIEdgeInsets insets, ALEdge edge);
+
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewEdge:(ALEdge)edge;
+        [Export("autoPinEdgeToSuperviewEdge:")]
 		NSLayoutConstraint AutoPinEdgeToSuperviewEdge(ALEdge edge);
 
 		// -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewEdge:(ALEdge)edge withInset:(CGFloat)inset;
@@ -69,8 +107,12 @@ namespace PureLayout.Net
 		[Export("autoPinEdgeToSuperviewMargin:")]
 		NSLayoutConstraint AutoPinEdgeToSuperviewMargin(ALEdge edge);
 
-		// -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewMargin:(ALEdge)edge relation:(NSLayoutRelation)relation;
-		[Export("autoPinEdgeToSuperviewMargin:relation:")]
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewMargin:(ALEdge)edge withInset:(CGFloat)inset;
+        [Export("autoPinEdgeToSuperviewMargin:withInset:")]
+        NSLayoutConstraint AutoPinEdgeToSuperviewMargin(ALEdge edge, nfloat inset);
+
+        // -(NSLayoutConstraint * _Nonnull)autoPinEdgeToSuperviewMargin:(ALEdge)edge relation:(NSLayoutRelation)relation;
+        [Export("autoPinEdgeToSuperviewMargin:relation:")]
 		NSLayoutConstraint AutoPinEdgeToSuperviewMargin(ALEdge edge, NSLayoutRelation relation);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewMargins;
