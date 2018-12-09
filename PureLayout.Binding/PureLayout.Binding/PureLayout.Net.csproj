@@ -10,13 +10,15 @@
     <RootNamespace>PureLayout.Net</RootNamespace>
     <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup>
     <PackageId>PureLayout.Net</PackageId>
     <PackageVersion>1.1.0</PackageVersion>
-    <Authors>Mark Allibone (@mallibone)</Authors>
+    <Authors>Mark Allibone</Authors>
     <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
-    <Owners>Mark Allibone</Owners>
+    <Authors>Mark Allibone</Authors>
     <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
-    <PackageReleaseNotes>Includes minor bugfixes from the Purelayout master branch</PackageReleaseNotes>
+    <PackageReleaseNotes>Now you can layout your view according to the SafeLayout.</PackageReleaseNotes>
     <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
     <PackageTags>PureLayout Xamarin.iOS</PackageTags>
     <Title>PureLayout.Net</Title>
@@ -27,7 +29,7 @@ Based on PureLayout: 3.1.4
 Fully compatible with iOS 9 and above.
 
 License: MIT</Description>
-    <PackOnBuild>true</PackOnBuild>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,15 +42,20 @@ License: MIT</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,9 +73,5 @@ License: MIT</Description>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>
