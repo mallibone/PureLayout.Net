@@ -7,7 +7,7 @@
     <licenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</licenseUrl>
     <owners>Mark Allibone</owners>
     <projectUrl>https://github.com/mallibone/PureLayout.Net</projectUrl>
-    <releaseNotes>Includes minor bugfixes from the Purelayout master branch</releaseNotes>
+    <releaseNotes>Now you can layout your view according to the SafeLayout.</releaseNotes>
     <summary>Xamarin.iOS wrapper of the PureLayout Library</summary>
     <tags>PureLayout Xamarin.iOS</tags>
     <title>PureLayout.Net</title>
