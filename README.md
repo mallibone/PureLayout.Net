@@ -1,5 +1,5 @@
 # [![PureLayout](https://github.com/mallibone/PureLayout.Net/blob/master/Images/LogoLarge.png?raw=true)](#)
-[![NuGet Version](https://img.shields.io/nuget/v/PureLayout.Net.svg)](https://www.nuget.org/packages/PureLayout.Net/) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![NuGet Version](https://img.shields.io/nuget/v/PureLayout.Net.svg)](https://www.nuget.org/packages/PureLayout.Net/) ![License](https://img.shields.io/badge/License-MIT-blue.svg) [![Build status](https://dev.azure.com/gnabber/PureLayout.Net/_apis/build/status/PureLayout.Net-CI)](https://dev.azure.com/gnabber/PureLayout.Net/_build/latest?definitionId=16)
 # PureLayout.Net
 
 The ultimate layouting API for iOS is now available for Xamarin.iOS. <a href="https://github.com/PureLayout/PureLayout" target="_blank">PureLayout</a> extends `UIView`/`NSView`, `NSArray`, and `NSLayoutConstraint` and brings productivity boosting enhancements with a refined Auto Layout API that is modeled after Apple's own frameworks. PureLayout.Net brings you 100% of the cross-platform Objective-C library to C# with Xamarin.iOS.
@@ -269,3 +269,8 @@ Once you have compiled the native PureLayout library you can delete all the gene
 ## Thank you
 
 A big thank you towards Tyler Fox (<a href="https://github.com/smileyborg" target="_blank">@smileyborg</a>) the original creator of <a href="https://github.com/PureLayout/PureLayout" target="_blank">PureLayout</a> and Mickey Reiss (<a href="https://github.com/mickeyreiss" target="_blank">@mickeyreiss</a>) current maintainer of the project for bringing this library to the iOS community.
+
+### PureLayout.Net Contributors
+
+* Michiel Sioen
+* Mark Allibone
