@@ -1,0 +1,34 @@
+queue:
+  name: Hosted macOS
+  demands: msbuild
+
+variables:
+  BuildConfiguration: 'Release'
+steps:
+- script: |
+   echo install objective sharpie
+   brew cask install objectivesharpie
+   echo Performing make
+   make
+  displayName: 'Command Line Script'
+
+- task: MSBuild@1
+  displayName: 'Build project PureLayout.Binding'
+  inputs:
+    solution: PureLayout.Binding/PureLayout.Binding/PureLayout.Net.csproj
+
+    msbuildArchitecture: x64
+
+    configuration: '$(BuildConfiguration)'
+
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack'
+  inputs:
+    command: pack
+
+    packagesToPack: PureLayout.Binding/PureLayout.Binding/PureLayout.Net.csproj
+
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
