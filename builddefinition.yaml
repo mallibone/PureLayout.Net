@@ -7,11 +7,15 @@ variables:
 trigger:
   batch: true
   branches:
+    include:
+    - *
   paths:
     exclude:
     - README.md
 pr:
   branches:
+    include:
+    - *
   paths:
     exclude:
     - README.md
