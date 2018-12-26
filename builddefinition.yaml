@@ -8,14 +8,14 @@ trigger:
   batch: true
   branches:
     include:
-    - *
+    - master
   paths:
     exclude:
     - README.md
 pr:
   branches:
     include:
-    - *
+    - master
   paths:
     exclude:
     - README.md
