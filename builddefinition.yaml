@@ -4,6 +4,8 @@ queue:
 
 variables:
   BuildConfiguration: 'Release'
+trigger: master
+pr: master
 steps:
 - script: |
    echo install objective sharpie
