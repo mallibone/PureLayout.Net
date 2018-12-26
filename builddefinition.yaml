@@ -4,8 +4,15 @@ queue:
 
 variables:
   BuildConfiguration: 'Release'
-trigger: master
-pr: master
+trigger:
+  batch: true
+  paths:
+    exclude:
+    - README.md
+pr:
+  paths:
+    exclude:
+    - README.md
 steps:
 - script: |
    echo install objective sharpie
