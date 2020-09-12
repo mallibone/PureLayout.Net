@@ -255,7 +255,7 @@ When cloning the project ensure that it is recursively checked out:
 
 `git clone --recursive https://github.com/mallibone/PureLayout.Net.git`
 
-To compile the Objective-C PureLayout library, run `make` from the project root folder.
+To compile the Objective-C PureLayout library: Ensure that [Objective-Sharpie](https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/objective-sharpie/) is intalled on your machine and then run `make` from the project root folder.
 
 This will compile the native Part of the library. If you now compile the Binding Project, the compiled native assembly will automatically be included.
 
