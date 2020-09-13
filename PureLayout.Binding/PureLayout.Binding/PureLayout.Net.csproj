@@ -13,18 +13,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>PureLayout.Net</PackageId>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>3.1.6</PackageVersion>
     <Authors>Mark Allibone</Authors>
     <PackageLicenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</PackageLicenseUrl>
     <Authors>Mark Allibone</Authors>
     <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
-    <PackageReleaseNotes>Now you can layout your view according to the SafeLayout.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update to Version 3.1.6.</PackageReleaseNotes>
     <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
     <PackageTags>PureLayout Xamarin.iOS</PackageTags>
     <Title>PureLayout.Net</Title>
     <Description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
 
-Based on PureLayout: 3.1.4
+Based on PureLayout: 3.1.6
 
 Fully compatible with iOS 9 and above.
 
