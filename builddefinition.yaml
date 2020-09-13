@@ -20,12 +20,12 @@ pr:
     exclude:
     - README.md
 steps:
-- script: |
-   echo install objective sharpie
-   brew cask install objectivesharpie
-   echo Performing make
-   make
-  displayName: 'Command Line Script'
+#- script: |
+#   echo install objective sharpie
+#   brew cask install objectivesharpie
+#   echo Performing make
+#   make
+#  displayName: 'Command Line Script'
 
 - task: MSBuild@1
   displayName: 'Build project PureLayout.Binding'
