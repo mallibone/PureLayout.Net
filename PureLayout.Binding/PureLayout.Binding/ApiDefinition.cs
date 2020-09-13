@@ -112,7 +112,7 @@ namespace PureLayout.Net
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewMargins;
         [Export("autoPinEdgesToSuperviewMargins")]
         // [Verify(MethodToProperty)]
-        NSLayoutConstraint[] AutoPinEdgesToSuperviewMargins()
+        NSLayoutConstraint[] AutoPinEdgesToSuperviewMargins();
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoPinEdgesToSuperviewMarginsWithInsets:(UIEdgeInsets)insets;
         [Export("autoPinEdgesToSuperviewMarginsWithInsets:")]
