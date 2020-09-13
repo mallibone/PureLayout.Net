@@ -23,7 +23,7 @@ $(PROJECTNAME)-iphone.framework:
 	mv $(PROJECT_ROOT)/build/Release-iphoneos/$(PROJECTNAME).framework $(PROJECTNAME)-iphone.framework
 
 $(BINDING_PROJECT)/Generated_ApiDefinitions.cs:
-	 sharpie bind -p Generated_ -n $(BINDING_PROJECT) -o $(BINDING_PROJECT) $(PROJECT)
+	 sharpie bind -p Generated_ -sdk iphoneos13.7 -o $(BINDING_PROJECT) ./$(PROJECTNAME)-iphone.framework/Headers/PureLayout.h -scope ./$(PROJECTNAME)-iphone.framework/Headers
 
 $(PROJECTNAME).framework: $(PROJECTNAME)-simulator.framework $(PROJECTNAME)-iphone.framework $(BINDING_PROJECT)/Generated_ApiDefinitions.cs
 	cp -R $(PROJECTNAME)-iphone.framework ./$(PROJECTNAME).framework
