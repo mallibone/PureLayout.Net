@@ -30,6 +30,7 @@ test-results/
 Thumbs.db
 .vs/
 .mfractor/
+.ionide/
 
 # Mac bundle stuff
 *.dmg
