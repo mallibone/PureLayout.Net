@@ -10,6 +10,13 @@
     <RootNamespace>PureLayout.Net</RootNamespace>
     <AssemblyName>PureLayout.Net</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <Description>PureLayout aka the ultimate iOS/Mac library for defining your UI in code behind is now available for Xamarin.
+
+Based on PureLayout: 3.1.4
+
+Fully compatible with iOS 9 and above.
+
+License: MIT</Description>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>PureLayout.Net</PackageId>
@@ -19,7 +26,7 @@
     <Authors>Mark Allibone</Authors>
     <PackageProjectUrl>https://github.com/mallibone/PureLayout.Net</PackageProjectUrl>
     <PackageReleaseNotes>Now you can layout your view according to the SafeLayout.</PackageReleaseNotes>
-    <Summary>Xamarin.iOS wrapper of the PureLayout Library</Summary>
+    <Summary>Xamarin wrapper of the PureLayout Library</Summary>
     <PackageTags>PureLayout Xamarin.iOS</PackageTags>
     <Title>PureLayout.Net</Title>
     <Description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
@@ -42,7 +49,6 @@ License: MIT</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -68,7 +74,7 @@ License: MIT</Description>
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\PureLayout.framework">
+    <NativeReference Include="..\..\Frameworks\ios\PureLayout.framework">
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
