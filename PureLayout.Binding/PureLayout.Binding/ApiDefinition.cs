@@ -140,11 +140,11 @@ namespace PureLayout.Net
 
         // -(NSLayoutConstraint * _Nonnull)autoAlignAxis:(ALAxis)axis toSameAxisOfView:(UIView * _Nonnull)otherView withOffset:(CGFloat)offset;
         [Export("autoAlignAxis:toSameAxisOfView:withOffset:")]
-        NSLayoutConstraint AutoAlignAxis(ALAxis axis, UIView otherView, nfloat offset);
+        NSLayoutConstraint AutoAlignAxisWithOffset(ALAxis axis, UIView otherView, nfloat offset);
 
         // -(NSLayoutConstraint * _Nonnull)autoAlignAxis:(ALAxis)axis toSameAxisOfView:(UIView * _Nonnull)otherView withMultiplier:(CGFloat)multiplier;
         [Export("autoAlignAxis:toSameAxisOfView:withMultiplier:")]
-        NSLayoutConstraint AutoAlignAxis(ALAxis axis, UIView otherView, nfloat multiplier);
+        NSLayoutConstraint AutoAlignAxisWithMultiplier(ALAxis axis, UIView otherView, nfloat multiplier);
 
         // -(NSLayoutConstraint * _Nonnull)autoMatchDimension:(ALDimension)dimension toDimension:(ALDimension)toDimension ofView:(UIView * _Nonnull)otherView;
         [Export("autoMatchDimension:toDimension:ofView:")]
@@ -152,19 +152,19 @@ namespace PureLayout.Net
 
         // -(NSLayoutConstraint * _Nonnull)autoMatchDimension:(ALDimension)dimension toDimension:(ALDimension)toDimension ofView:(UIView * _Nonnull)otherView withOffset:(CGFloat)offset;
         [Export("autoMatchDimension:toDimension:ofView:withOffset:")]
-        NSLayoutConstraint AutoMatchDimension(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat offset);
+        NSLayoutConstraint AutoMatchDimensionWithOffset(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat offset);
 
         // -(NSLayoutConstraint * _Nonnull)autoMatchDimension:(ALDimension)dimension toDimension:(ALDimension)toDimension ofView:(UIView * _Nonnull)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
         [Export("autoMatchDimension:toDimension:ofView:withOffset:relation:")]
-        NSLayoutConstraint AutoMatchDimension(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat offset, NSLayoutRelation relation);
+        NSLayoutConstraint AutoMatchDimensionWithOffset(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat offset, NSLayoutRelation relation);
 
         // -(NSLayoutConstraint * _Nonnull)autoMatchDimension:(ALDimension)dimension toDimension:(ALDimension)toDimension ofView:(UIView * _Nonnull)otherView withMultiplier:(CGFloat)multiplier;
         [Export("autoMatchDimension:toDimension:ofView:withMultiplier:")]
-        NSLayoutConstraint AutoMatchDimension(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat multiplier);
+        NSLayoutConstraint AutoMatchDimensionWithMultiplier(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat multiplier);
 
         // -(NSLayoutConstraint * _Nonnull)autoMatchDimension:(ALDimension)dimension toDimension:(ALDimension)toDimension ofView:(UIView * _Nonnull)otherView withMultiplier:(CGFloat)multiplier relation:(NSLayoutRelation)relation;
         [Export("autoMatchDimension:toDimension:ofView:withMultiplier:relation:")]
-        NSLayoutConstraint AutoMatchDimension(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat multiplier, NSLayoutRelation relation);
+        NSLayoutConstraint AutoMatchDimensionWithMultiplier(ALDimension dimension, ALDimension toDimension, UIView otherView, nfloat multiplier, NSLayoutRelation relation);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoSetDimensionsToSize:(CGSize)size;
         [Export("autoSetDimensionsToSize:")]
@@ -192,19 +192,19 @@ namespace PureLayout.Net
 
         // -(NSLayoutConstraint * _Nonnull)autoConstrainAttribute:(ALAttribute)attribute toAttribute:(ALAttribute)toAttribute ofView:(UIView * _Nonnull)otherView withOffset:(CGFloat)offset;
         [Export("autoConstrainAttribute:toAttribute:ofView:withOffset:")]
-        NSLayoutConstraint AutoConstrainAttribute(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat offset);
+        NSLayoutConstraint AutoConstrainAttributeWithOffset(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat offset);
 
         // -(NSLayoutConstraint * _Nonnull)autoConstrainAttribute:(ALAttribute)attribute toAttribute:(ALAttribute)toAttribute ofView:(UIView * _Nonnull)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
         [Export("autoConstrainAttribute:toAttribute:ofView:withOffset:relation:")]
-        NSLayoutConstraint AutoConstrainAttribute(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat offset, NSLayoutRelation relation);
+        NSLayoutConstraint AutoConstrainAttributeWithOffset(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat offset, NSLayoutRelation relation);
 
         // -(NSLayoutConstraint * _Nonnull)autoConstrainAttribute:(ALAttribute)attribute toAttribute:(ALAttribute)toAttribute ofView:(UIView * _Nonnull)otherView withMultiplier:(CGFloat)multiplier;
         [Export("autoConstrainAttribute:toAttribute:ofView:withMultiplier:")]
-        NSLayoutConstraint AutoConstrainAttribute(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat multiplier);
+        NSLayoutConstraint AutoConstrainAttributeWithMultiplier(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat multiplier);
 
         // -(NSLayoutConstraint * _Nonnull)autoConstrainAttribute:(ALAttribute)attribute toAttribute:(ALAttribute)toAttribute ofView:(UIView * _Nonnull)otherView withMultiplier:(CGFloat)multiplier relation:(NSLayoutRelation)relation;
         [Export("autoConstrainAttribute:toAttribute:ofView:withMultiplier:relation:")]
-        NSLayoutConstraint AutoConstrainAttribute(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat multiplier, NSLayoutRelation relation);
+        NSLayoutConstraint AutoConstrainAttributeWithMultiplier(ALAttribute attribute, ALAttribute toAttribute, UIView otherView, nfloat multiplier, NSLayoutRelation relation);
     }
 
     // @interface PureLayout (NSArray)
@@ -246,23 +246,23 @@ namespace PureLayout.Net
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoDistributeViewsAlongAxis:(ALAxis)axis alignedTo:(ALAttribute)alignment withFixedSpacing:(CGFloat)spacing;
         [Export("autoDistributeViewsAlongAxis:alignedTo:withFixedSpacing:")]
-        NSLayoutConstraint[] AutoDistributeViewsAlongAxis(ALAxis axis, ALAttribute alignment, nfloat spacing);
+        NSLayoutConstraint[] AutoDistributeViewsAlongAxisWithFixedSpacing(ALAxis axis, ALAttribute alignment, nfloat spacing);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoDistributeViewsAlongAxis:(ALAxis)axis alignedTo:(ALAttribute)alignment withFixedSpacing:(CGFloat)spacing insetSpacing:(BOOL)shouldSpaceInsets;
         [Export("autoDistributeViewsAlongAxis:alignedTo:withFixedSpacing:insetSpacing:")]
-        NSLayoutConstraint[] AutoDistributeViewsAlongAxis(ALAxis axis, ALAttribute alignment, nfloat spacing, bool shouldSpaceInsets);
+        NSLayoutConstraint[] AutoDistributeViewsAlongAxisWithFixedSpacing(ALAxis axis, ALAttribute alignment, nfloat spacing, bool shouldSpaceInsets);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoDistributeViewsAlongAxis:(ALAxis)axis alignedTo:(ALAttribute)alignment withFixedSpacing:(CGFloat)spacing insetSpacing:(BOOL)shouldSpaceInsets matchedSizes:(BOOL)shouldMatchSizes;
         [Export("autoDistributeViewsAlongAxis:alignedTo:withFixedSpacing:insetSpacing:matchedSizes:")]
-        NSLayoutConstraint[] AutoDistributeViewsAlongAxis(ALAxis axis, ALAttribute alignment, nfloat spacing, bool shouldSpaceInsets, bool shouldMatchSizes);
+        NSLayoutConstraint[] AutoDistributeViewsAlongAxisWithFixedSpacing(ALAxis axis, ALAttribute alignment, nfloat spacing, bool shouldSpaceInsets, bool shouldMatchSizes);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoDistributeViewsAlongAxis:(ALAxis)axis alignedTo:(ALAttribute)alignment withFixedSize:(CGFloat)size;
         [Export("autoDistributeViewsAlongAxis:alignedTo:withFixedSize:")]
-        NSLayoutConstraint[] AutoDistributeViewsAlongAxis(ALAxis axis, ALAttribute alignment, nfloat size);
+        NSLayoutConstraint[] AutoDistributeViewsAlongAxisWithFixedSize(ALAxis axis, ALAttribute alignment, nfloat size);
 
         // -(NSArray<NSLayoutConstraint *> * _Nonnull)autoDistributeViewsAlongAxis:(ALAxis)axis alignedTo:(ALAttribute)alignment withFixedSize:(CGFloat)size insetSpacing:(BOOL)shouldSpaceInsets;
         [Export("autoDistributeViewsAlongAxis:alignedTo:withFixedSize:insetSpacing:")]
-        NSLayoutConstraint[] AutoDistributeViewsAlongAxis(ALAxis axis, ALAttribute alignment, nfloat size, bool shouldSpaceInsets);
+        NSLayoutConstraint[] AutoDistributeViewsAlongAxisWithFixedSize(ALAxis axis, ALAttribute alignment, nfloat size, bool shouldSpaceInsets);
     }
 
     // @interface PureLayout (NSLayoutConstraint)
