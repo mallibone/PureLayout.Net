@@ -9,9 +9,9 @@
     <projectUrl>https://github.com/mallibone/PureLayout.Net</projectUrl>
     <releaseNotes>Update to Version 3.1.6</releaseNotes>
     <summary>Xamarin.iOS wrapper of the PureLayout Library</summary>
-    <tags>PureLayout Xamarin.iOS</tags>
+    <tags>PureLayout Xamarin.iOS Xamarin.Mac</tags>
     <title>PureLayout.Net</title>
-    <description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS.
+    <description>PureLayout aka the ultimate iOS library for defining your UI in code behind is now available for Xamarin.iOS and Xamarin.Mac.
 
 Based on PureLayout: 3.1.6
 
