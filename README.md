@@ -272,5 +272,6 @@ A big thank you towards Tyler Fox (<a href="https://github.com/smileyborg" targe
 
 ### PureLayout.Net Contributors
 
-* Michiel Sioen
-* Mark Allibone
+* [arolson101](https://github.com/arolson101)
+* [Michiel Sioen](https://github.com/msioen)
+* [Mark Allibone](https://twitter.com/mallibone)
