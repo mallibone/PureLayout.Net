@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>PureLayout.Net</id>
-    <version>3.1.6.1</version>
+    <version>3.1.6</version>
     <authors>Mark Allibone (@mallibone)</authors>
     <licenseUrl>https://github.com/mallibone/PureLayout.Net/blob/master/LICENSE</licenseUrl>
     <owners>Mark Allibone</owners>

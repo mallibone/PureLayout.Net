@@ -21,7 +21,7 @@ all: ios mac
 ios: $(FRAMEWORKS_IOS)/$(PROJECTNAME).framework $(BINDING_PROJECT_IOS)/Generated_ApiDefinitions.cs
 
 $(FRAMEWORKS_IOS)/$(PROJECTNAME)-simulator.framework:
-	$(XBUILD) ONLY_ACTIVE_ARCH=NO -project $(PROJECT) -target $(TARGET_IOS) -sdk iphonesimulator -configuration Release clean build
+	$(XBUILD) ONLY_ACTIVE_ARCH=NO -project $(PROJECT) -target $(TARGET_IOS) -sdk iphonesimulator -configuration Release clean build EXCLUDED_ARCHS="arm64"
 	mkdir -p $(FRAMEWORKS_IOS)
 	mv $(PROJECT_ROOT)/build/Release-iphonesimulator/$(PROJECTNAME).framework $@
 
@@ -31,7 +31,7 @@ $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework:
 	mv $(PROJECT_ROOT)/build/Release-iphoneos/$(PROJECTNAME).framework $@
 
 $(BINDING_PROJECT_IOS)/Generated_ApiDefinitions.cs: $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework
-	sharpie bind -p Generated_ -sdk iphoneos13.7 -o $(BINDING_PROJECT_IOS) $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework/Headers/PureLayout.h -scope $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework/Headers
+	sharpie bind -p Generated_ -sdk iphoneos14.0 -o $(BINDING_PROJECT_IOS) $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework/Headers/PureLayout.h -scope $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework/Headers
 
 $(FRAMEWORKS_IOS)/$(PROJECTNAME).framework: $(FRAMEWORKS_IOS)/$(PROJECTNAME)-simulator.framework $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework
 	cp -R $(FRAMEWORKS_IOS)/$(PROJECTNAME)-iphone.framework $@
